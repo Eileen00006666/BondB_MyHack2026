@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #F0F6FD;
+  --navy2:   #ffffff;
+  --navy3:   #ffffff;
+  --navy4:   #E6F1FB;
+  --border:  #B5D4F4;
+  --border2: #85B7EB;
+  --border3: #378ADD;
+  --blue:    #1a56db;
+  --blue2:   #2563eb;
+  --blue3:   #3b82f6;
+  --blue4:   #378ADD;
+  --blue5:   #B5D4F4;
+  --green:   #047857;
+  --green2:  #059669;
+  --green3:  #10b981;
+  --green4:  #34d399;
+  --purple:  #6d28d9;
+  --purple2: #7c3aed;
+  --purple3: #8b5cf6;
+  --purple4: #a78bfa;
+  --orange:  #d97706;
+  --orange2: #f59e0b;
+  --orange3: #fbbf24;
+  --red:     #dc2626;
+  --red2:    #ef4444;
+  --red3:    #fca5a5;
+  --cyan:    #0891b2;
+  --cyan2:   #06b6d4;
+  --cyan3:   #67e8f9;
+  --t1:      #042C53;
+  --t2:      #185FA5;
+  --t3:      #85B7EB;
+}
+
+body {
+  background: var(--navy);
+  color: var(--t1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: 'Syne', sans-serif; }
+.font-mono    { font-family: 'IBM Plex Mono', monospace; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--navy2); }
+::-webkit-scrollbar-thumb { background: var(--border3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--t3); }
+
+@keyframes borderGlow {
+  0%,100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.glow-border { animation: borderGlow 3s ease-in-out infinite; }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.drawer-enter { animation: slideIn 0.22s cubic-bezier(0.4,0,0.2,1) forwards; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.3s ease forwards; }
+
+.stagger-1 { animation-delay: 0.05s; opacity: 0; }
+.stagger-2 { animation-delay: 0.1s;  opacity: 0; }
+.stagger-3 { animation-delay: 0.15s; opacity: 0; }
+.stagger-4 { animation-delay: 0.2s;  opacity: 0; }
+
+.bar-fill { transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.7s linear infinite; }
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.pulse-dot { animation: pulse 2s ease-in-out infinite; }

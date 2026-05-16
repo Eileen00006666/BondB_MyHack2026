@@ -1,0 +1,9 @@
+{
+  "name": "bondb-root",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm --prefix BondB_combined/frontend run dev",
+    "dev:backend": "npm --prefix BondB_combined/backend run dev",
+    "dev": "npm run dev:frontend"
+  }
+}
